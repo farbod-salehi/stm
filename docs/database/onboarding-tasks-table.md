@@ -1,0 +1,36 @@
+# STM - OnboardingTasks Table
+
+## Schema
+
+| Column      | Type          | Description                                                                   |
+| ----------- | ------------- | ----------------------------------------------------------------------------- |
+| Id          | GUID          | Primary key;                                                                  |
+| ProposalId  | GUID          | Foreign key referencing Proposals table; (Required, Indexed)                  |
+| Title       | NVARCHAR(200) | Short title describing the task (e.g., "Sign Coaching Agreement");(Required)  |
+| Description | NVARCHAR(MAX) | Detailed instructions or notes for the task; (Not Required)                   |
+| Status      | NVARCHAR(20)  | Pending, Completed, Skipped; (Required, Default: 'Pending')                   |
+| Order       | INT           | Display order for tasks in the onboarding workflow; (Required, Default: 0)    |
+| DueDate     | DATETIME2(0)  | Optional deadline for completing the task; (Not Required)                     |
+| CompletedAt | DATETIME2(0)  | Timestamp when the task was completed; (Not Required)                         |
+| CreatedAt   | DATETIME2(0)  | Timestamp when the task was created; (Required)                               |
+| UpdatedAt   | DATETIME2(0)  | Timestamp when the task was last updated; (Not Required)                      |
+| IsDeleted   | BIT           | Indicates whether the record is logically deleted; (Required, Default: false) |
+| DeletedAt   | DATETIME2(0)  | Deleting timestamp; (Not Required)                                            |
+| DeletedBy   | GUID          | Foreign key referencing Users table; (Not Required)                           |
+
+---
+
+## Indexes
+
+- `IX_OnboardingTasks_ProposalId WHERE IsDeleted = 0`
+- `IX_OnboardingTasks_ProposalId_Order WHERE IsDeleted = 0` (unique)
+
+---
+
+## Checkes
+
+```SQL
+ALTER TABLE OnboardingTasks
+ADD CONSTRAINT CK_OnboardingTasks_Status
+CHECK (Status IN ('Pending', 'Completed', 'Skipped'));
+```

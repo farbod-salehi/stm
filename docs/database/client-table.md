@@ -1,0 +1,44 @@
+# STM - Clients Table
+
+## Schema
+
+| Column    | Type          | Description                                                                   |
+| --------- | ------------- | ----------------------------------------------------------------------------- |
+| Id        | GUID          | Primary key;                                                                  |
+| TenantId  | GUID          | Foreign key referencing Tenants table; (Required, Indexed)                    |
+| FullName  | NVARCHAR(200) | Client’s full name (Required)                                                 |
+| Email     | NVARCHAR(320) | Client’s email; (Not Required)                                                |
+| Phone     | NVARCHAR(50)  | Client's phone number; (Not Required)                                         |
+| Status    | NVARCHAR(30)  | Lead, Active, Paused, Completed; (Required)                                   |
+| Timezone  | NVARCHAR(100) | Client's preferred time zone; (Required, Default: "UTC")                      |
+| Source    | NVARCHAR(30)  | Manual, LinkedIn, Website, Referral, Other; (Not Required)                    |
+| CreatedAt | DATETIME2(0)  | Creation timestamp; (Required)                                                |
+| UpdatedAt | DATETIME2(0)  | Updating timestamp; (Not Required)                                            |
+| IsDeleted | BIT           | Indicates whether the record is logically deleted; (Required, Default: false) |
+| DeletedAt | DATETIME2(0)  | Deleting timestamp; (Not Required)                                            |
+| DeletedBy | GUID          | Foreign key referencing Users table; (Not Required)                           |
+
+---
+
+## Indexes
+
+- `IX_Clients_TenantId WHERE IsDeleted = 0`
+- `IX_Clients_TenantId_Status WHERE IsDeleted = 0`
+- `IX_Clients_TenantId_Phone WHERE IsDeleted = 0` (unique)
+- `IX_Clients_TenantId_Email WHERE IsDeleted = 0` (Unique)
+
+---
+
+## Checkes
+
+```SQL
+ALTER TABLE Clients
+ADD CONSTRAINT CK_Clients_Status
+CHECK (Status IN ('Lead', 'Active', 'Paused', 'Completed'));
+```
+
+```SQL
+ALTER TABLE Clients
+ADD CONSTRAINT CK_Clients_Source
+CHECK (Source IS NULL OR Source IN ('Manual', 'LinkedIn', 'Website', 'Referral', 'Other'));
+```

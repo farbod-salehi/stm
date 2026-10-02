@@ -1,0 +1,34 @@
+# STM - Users Table
+
+## Schema
+
+| Column       | Type          | Description                                                                                               |
+| ------------ | ------------- | --------------------------------------------------------------------------------------------------------- |
+| Id           | GUID          | Primary key;                                                                                              |
+| TenantId     | GUID          | Foreign key referencing Tenants table; (Required, Indexed)                                                |
+| Email        | NVARCHAR(320) | User’s login email; (Required, Indexed)                                                                   |
+| PasswordHash | NVARCHAR(500) | Securely stored password hash; (Required)                                                                 |
+| FullName     | NVARCHAR(200) | User’s full name (Required)                                                                               |
+| Role         | NVARCHAR(50)  | Admin, Consultant, Assistant; (Required)                                                                  |
+| IsVerified   | BIT           | Indicates whether the user’s email has been successfully verified through OTP; (Required, Default: false) |
+| IsActive     | BIT           | Admins can deactivate consultants or assistants. Inactive users cannot log in ;(Required, Default: true)  |
+| UpdatedAt    | DATETIME2(0)  | Updating timestamp; (Not Required)                                                                        |
+| CreatedAt    | DATETIME2(0)  | Creation timestamp; (Required)                                                                            |
+| LastLoginAt  | DATETIME2(0)  | Last login timestamp; (Not Required)                                                                      |
+
+---
+
+## Indexes
+
+- `IX_Users_TenantId`
+- `IX_Users_Email` (unique)
+
+---
+
+## Check
+
+```SQL
+ALTER TABLE Users
+ADD CONSTRAINT CK_Users_Role
+CHECK (Role IN ('Admin', 'Consultant', 'Assistant'));
+```

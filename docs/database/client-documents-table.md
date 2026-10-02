@@ -1,0 +1,30 @@
+# STM - ClientDocuments Table
+
+## Schema
+
+| Column     | Type          | Description                                                                               |
+| ---------- | ------------- | ----------------------------------------------------------------------------------------- |
+| Id         | GUID          | Primary key;                                                                              |
+| ClientId   | GUID          | Foreign key referencing Clients table; (Required, Indexed)                                |
+| FileUrl    | NVARCHAR(500) | URL pointing to the stored file; (Required)                                               |
+| Type       | NVARCHAR(50)  | Discovery, Proposal, Onboarding, Session, Contract, Invoice, Receipt, General; (Required) |
+| UploadedAt | DATETIME2(0)  | Upload timestamp; (Required)                                                              |
+| UploadedBy | GUID          | Foreign key referencing Users table; (Required)                                           |
+| UpdatedAt  | DATETIME2(0)  | Update timestamp; (Required)                                                              |
+
+---
+
+## Indexes
+
+- `IX_ClientDocuments_ClientId`
+- `IX_ClientDocuments_ClientId_Type`
+
+---
+
+## Check
+
+```SQL
+ALTER TABLE ClientDocuments
+ADD CONSTRAINT CK_ClientDocuments_Type
+CHECK (Type IN ('Discovery', 'Proposal', 'Onboarding', 'Session', 'Contract', 'Invoice', 'Receipt', 'General'));
+```

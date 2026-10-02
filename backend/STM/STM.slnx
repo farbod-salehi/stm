@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/STM.Api/STM.Api.csproj" />
+  <Project Path="src/STM.Application/STM.Application.csproj" />
+  <Project Path="src/STM.Domain/STM.Domain.csproj" />
+  <Project Path="src/STM.Infrastructure/STM.Infrastructure.csproj" />
+</Solution>
