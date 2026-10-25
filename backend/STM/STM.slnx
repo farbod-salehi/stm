@@ -3,4 +3,5 @@
   <Project Path="src/STM.Application/STM.Application.csproj" />
   <Project Path="src/STM.Domain/STM.Domain.csproj" />
   <Project Path="src/STM.Infrastructure/STM.Infrastructure.csproj" />
+  <Project Path="tests/STM.Domain.Tests/STM.Domain.Tests.csproj" Id="196a20d9-596f-4982-aa32-89d72a07cb75" />
 </Solution>
