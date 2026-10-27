@@ -2,15 +2,15 @@
 
 ## Schema
 
-| Column     | Type          | Description                                                                               |
-| ---------- | ------------- | ----------------------------------------------------------------------------------------- |
-| Id         | GUID          | Primary key;                                                                              |
-| ClientId   | GUID          | Foreign key referencing Clients table; (Required, Indexed)                                |
-| FileUrl    | NVARCHAR(500) | URL pointing to the stored file; (Required)                                               |
-| Type       | NVARCHAR(50)  | Discovery, Proposal, Onboarding, Session, Contract, Invoice, Receipt, General; (Required) |
-| UploadedAt | DATETIME2(0)  | Upload timestamp; (Required)                                                              |
-| UploadedBy | GUID          | Foreign key referencing Users table; (Required)                                           |
-| UpdatedAt  | DATETIME2(0)  | Update timestamp; (Required)                                                              |
+| Column     | Type           | Description                                                                               |
+| ---------- | -------------- | ----------------------------------------------------------------------------------------- |
+| Id         | GUID           | Primary key;                                                                              |
+| ClientId   | GUID           | Foreign key referencing Clients table; (Required, Indexed)                                |
+| FileUrl    | NVARCHAR(500)  | URL pointing to the stored file; (Required)                                               |
+| Type       | NVARCHAR(50)   | Discovery, Proposal, Onboarding, Session, Contract, Invoice, Receipt, General; (Required) |
+| UploadedAt | DATETIMEOFFSET | Upload timestamp; (Required)                                                              |
+| UploadedBy | GUID           | Foreign key referencing Users table; (Required)                                           |
+| UpdatedAt  | DATETIMEOFFSET | Update timestamp; (Required)                                                              |
 
 ---
 

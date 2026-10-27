@@ -2,21 +2,21 @@
 
 ## Schema
 
-| Column          | Type          | Description                                                                                |
-| --------------- | ------------- | ------------------------------------------------------------------------------------------ |
-| Id              | GUID          | Primary key;                                                                               |
-| ClientId        | GUID          | Foreign key referencing Clients table; (Required, Indexed)                                 |
-| ScheduledAt     | DATETIME2(0)  | Calling timestamp; (Required, Indexed)                                                     |
-| DurationMinutes | INT           | 15, 30, 45, 60, etc. ; (Required)                                                          |
-| Status          | NVARCHAR(20)  | Scheduled, Completed, No-Show; (Required, Indexed, Default: 'Scheduled')                   |
-| Outcome         | NVARCHAR(20)  | Qualified, NotQualified, NoShow; (Not Required)                                            |
-| Notes           | NVARCHAR(MAX) | Consultant notes about the call; (Not Required)                                            |
-| ExternalEventId | NVARCHAR(200) | ID of the event in Google/Outlook calendar, used for updates/cancellations; (Not Required) |
-| CreatedAt       | DATETIME2(0)  | Creation timestamp; (Required)                                                             |
-| UpdatedAt       | DATETIME2(0)  | Updating timestamp; (Not Required)                                                         |
-| IsDeleted       | BIT           | Indicates whether the record is logically deleted; (Required, Default: false)              |
-| DeletedAt       | DATETIME2(0)  | Deleting timestamp; (Not Required)                                                         |
-| DeletedBy       | GUID          | Foreign key referencing Users table; (Not Required)                                        |
+| Column          | Type           | Description                                                                                |
+| --------------- | -------------- | ------------------------------------------------------------------------------------------ |
+| Id              | GUID           | Primary key;                                                                               |
+| ClientId        | GUID           | Foreign key referencing Clients table; (Required, Indexed)                                 |
+| ScheduledAt     | DATETIMEOFFSET | Calling timestamp; (Required, Indexed)                                                     |
+| DurationMinutes | INT            | 15, 30, 45, 60, etc. ; (Required)                                                          |
+| Status          | NVARCHAR(20)   | Scheduled, Completed, No-Show; (Required, Indexed, Default: 'Scheduled')                   |
+| Outcome         | NVARCHAR(20)   | Qualified, NotQualified, NoShow; (Not Required)                                            |
+| Notes           | NVARCHAR(MAX)  | Consultant notes about the call; (Not Required)                                            |
+| ExternalEventId | NVARCHAR(200)  | ID of the event in Google/Outlook calendar, used for updates/cancellations; (Not Required) |
+| CreatedAt       | DATETIMEOFFSET | Creation timestamp; (Required)                                                             |
+| UpdatedAt       | DATETIMEOFFSET | Updating timestamp; (Not Required)                                                         |
+| IsDeleted       | BIT            | Indicates whether the record is logically deleted; (Required, Default: false)              |
+| DeletedAt       | DATETIMEOFFSET | Deleting timestamp; (Not Required)                                                         |
+| DeletedBy       | GUID           | Foreign key referencing Users table; (Not Required)                                        |
 
 ---
 
