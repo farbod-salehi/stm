@@ -2,15 +2,15 @@
 
 ## Schema
 
-| Column         | Type          | Description                                                                                                                 |
-| -------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Id             | GUID          | Primary key;                                                                                                                |
-| UserId         | GUID          | Foreign key referencing Users table; (Required, Indexed)                                                                    |
-| DeviceId       | NVARCHAR(64)  | Unique device/browser identifier. Matches the DeviceId stored in RefreshTokens; (Required)                                  |
-| DeviceName     | NVARCHAR(128) | Human‑readable device label, derived from UserAgent and used only for UI display; (Not Required)                            |
-| CreatedAt      | DATETIME2(0)  | Timestamp when the token was created; (Required)                                                                            |
-| IsActive       | BIT           | Set 0 on log out from this device or all devices, password/email change, expiration/revocation of refresh-token; (Required) |
-| LastActivityAt | DATETIME2(0)  | Updated on login, refresh-token rotation, any authenticated API call; (Not Required)                                        |
+| Column         | Type           | Description                                                                                                                 |
+| -------------- | -------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Id             | GUID           | Primary key;                                                                                                                |
+| UserId         | GUID           | Foreign key referencing Users table; (Required, Indexed)                                                                    |
+| DeviceId       | NVARCHAR(64)   | Unique device/browser identifier. Matches the DeviceId stored in RefreshTokens; (Required)                                  |
+| DeviceName     | NVARCHAR(128)  | Human‑readable device label, derived from UserAgent and used only for UI display; (Not Required)                            |
+| CreatedAt      | DATETIMEOFFSET | Timestamp when the token was created; (Required)                                                                            |
+| IsActive       | BIT            | Set 0 on log out from this device or all devices, password/email change, expiration/revocation of refresh-token; (Required) |
+| LastActivityAt | DATETIMEOFFSET | Updated on login, refresh-token rotation, any authenticated API call; (Not Required)                                        |
 
 ---
 
