@@ -16,5 +16,16 @@ namespace STM.Domain.Exceptions
             public const string DomainHyphenPlacement = "Tenant.Domain.HyphenPlacement";
         }
 
+        public static class User
+        {
+            public const string EmailRequired = "User.Email.Required";
+            public const string EmailInvalidFormat = "User.Email.InvalidFormat";
+            public const string PasswordHashRequired = "User.PasswordHash.Required";
+            public const string FullNameRequired = "User.FullName.Required";
+            public const string RoleIsInvalid = "User.Role.IsInvalid";
+            public const string RoleCannotBeAdmin = "User.Role.CannotBeAdmin";
+            public const string TenantIdRequired = "User.TenantId.Required";
+        }
+
     }
 }

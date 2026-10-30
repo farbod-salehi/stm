@@ -25,7 +25,6 @@ This value is chosen by the customer (e.g., careercoach). This field enables:
 - Must be unique across tenants
 - Lowercase only
 - Allowed characters: a-z, 0-9, hyphen (-)
-- Regex: `^[a-z0-9]+(-[a-z0-9]+)*$`
 - Length: 3-50 characters
 - No leading/trailing hyphens
 - Reserved words blocked: www, api, admin, login, support, stmapp
