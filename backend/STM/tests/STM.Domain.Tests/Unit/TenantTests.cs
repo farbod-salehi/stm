@@ -17,6 +17,7 @@ public class TenantTests
         Tenant tenant = new(tenantName, tenantDomain);
 
         // Assert
+        Assert.NotEqual(Guid.Empty, tenant.Id);
         Assert.Equal(tenantName, tenant.Name);
         Assert.Equal(tenantDomain, tenant.Domain);
 
