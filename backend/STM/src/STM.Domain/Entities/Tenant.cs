@@ -1,4 +1,5 @@
-﻿using STM.Domain.Exceptions;
+﻿using STM.Domain.Entities.Users;
+using STM.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 
@@ -127,5 +128,13 @@ namespace STM.Domain.Entities
         public DateTimeOffset? UpdatedAt { get; private set; }
 
         public byte[] RowVersion { get; private set; } = default!;
+
+        
+        /* Navigation properties */
+
+        private readonly List<User> _users = [];
+
+        public IReadOnlyCollection<User> Users => _users;
+
     }
 }

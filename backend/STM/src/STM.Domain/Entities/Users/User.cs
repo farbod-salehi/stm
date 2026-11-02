@@ -216,5 +216,11 @@ namespace STM.Domain.Entities.Users
 
         public byte[] RowVersion { get; private set; } = default!;
 
+        
+        /* Navigation properties */
+
+        public Tenant Tenant { get; private set; } = default!;
+
+
     }
 }
