@@ -221,6 +221,7 @@ namespace STM.Domain.Entities.Users
 
         public Tenant Tenant { get; private set; } = default!;
 
+        public UserSettings UserSettings { get; private set; } = default!;
 
     }
 }
