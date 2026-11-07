@@ -27,5 +27,25 @@ namespace STM.Domain.Exceptions
             public const string TenantIdRequired = "User.TenantId.Required";
         }
 
+        public static class UserSettings
+        {
+            public const string TimezoneRequired = "UserSettings.Timezone.Required";
+
+            public const string UserIdRequired = "UserSettings.UserId.Required";
+
+            public const string NotificationPreferencesRequired = "UserSettings.NotificationPreferences.Required";
+
+            public const string InvalidTimezone = "UserSettings.Timezone.Invalid";
+
+            public const string InvalidSessionReminderMinutes = "UserSettings.NotificationPreferences.InvalidSessionReminderMinutes";
+
+            public const string InvalidCalendarProvider = "UserSettings.CalendarIntegrationToken.InvalidCalendarProvider";
+
+            public const string AccessTokenRequired = "UserSettings.CalendarIntegrationToken.AccessTokenRequired";
+
+            public const string RefreshTokenRequired = "UserSettings.CalendarIntegrationToken.RefreshTokenRequired";
+
+        }
+
     }
 }
