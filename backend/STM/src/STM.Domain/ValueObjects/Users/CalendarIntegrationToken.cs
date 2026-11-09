@@ -1,11 +1,12 @@
-﻿using STM.Domain.Exceptions;
+﻿using STM.Domain.Common;
+using STM.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace STM.Domain.ValueObjects.Users
 {
-    public sealed class CalendarIntegrationToken
+    public sealed class CalendarIntegrationToken : ValueObject
     {
         private CalendarIntegrationToken() { /* EF Core constructor */ }
 
@@ -38,6 +39,14 @@ namespace STM.Domain.ValueObjects.Users
                 accessToken,
                 refreshToken,
                 expiresAt);
+        }
+
+        protected override IEnumerable<object?> GetEqualityComponents()
+        {
+            yield return Provider;
+            yield return AccessToken;
+            yield return RefreshToken;
+            yield return ExpiresAt;
         }
 
         public bool IsExpired => ExpiresAt <= DateTimeOffset.UtcNow;

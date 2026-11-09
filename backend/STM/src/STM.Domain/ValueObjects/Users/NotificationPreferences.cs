@@ -1,11 +1,12 @@
-﻿using STM.Domain.Exceptions;
+﻿using STM.Domain.Common;
+using STM.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace STM.Domain.ValueObjects.Users
 {
-    public sealed class NotificationPreferences
+    public sealed class NotificationPreferences : ValueObject
     {
         private NotificationPreferences() { /* EF Core constructor */ }
 
@@ -47,6 +48,18 @@ namespace STM.Domain.ValueObjects.Users
                 taskAssignedAlerts);
         }
 
+
+        protected override IEnumerable<object?> GetEqualityComponents()
+        {
+            yield return Email;
+            yield return Sms;
+            yield return InApp;
+            yield return Push;
+            yield return SessionReminderMinutes;
+            yield return DailySummary;
+            yield return ClientMessageAlerts;
+            yield return TaskAssignedAlerts;
+        }
 
         public bool Email { get; }
         public bool Sms { get; }
