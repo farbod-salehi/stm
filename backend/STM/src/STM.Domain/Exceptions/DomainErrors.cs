@@ -35,7 +35,7 @@ namespace STM.Domain.Exceptions
 
             public const string NotificationPreferencesRequired = "UserSettings.NotificationPreferences.Required";
 
-            public const string InvalidTimezone = "UserSettings.Timezone.Invalid";
+            public const string TimezoneTooLong = "UserSettings.Timezone.TooLong";
 
             public const string InvalidSessionReminderMinutes = "UserSettings.NotificationPreferences.InvalidSessionReminderMinutes";
 
@@ -47,5 +47,20 @@ namespace STM.Domain.Exceptions
 
         }
 
+        public static class Client
+        {
+            public const string TenantIdRequired = "Client.TenantId.Required";
+            public const string FullNameRequired = "Client.FullName.Required";
+            public const string FullNameTooLong = "Client.FullName.TooLong";
+            public const string EmailInvalidFormat = "Client.Email.InvalidFormat";
+            public const string PhoneTooLong = "Client.Phone.TooLong";
+            public const string StatusIsInvalid = "Client.Status.IsInvalid";
+            public const string TimezoneRequired = "Client.Timezone.Required";
+            public const string TimezoneTooLong = "Client.Timezone.TooLong";
+            public const string SourceIsInvalid = "Client.Source.IsInvalid";
+            public const string IsAlreadyDeleted = "Client.Delete.IsAlreadyDeleted";
+            public const string DeletedByRequired = "Client.Delete.DeletedByRequired";
+            public const string CannotUpdateDeletedClient = "Client.Update.CannotUpdateDeletedClient";
+        }
     }
 }

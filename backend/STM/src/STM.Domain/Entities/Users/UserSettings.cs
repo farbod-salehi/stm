@@ -74,21 +74,12 @@ namespace STM.Domain.Entities.Users
 
             if (timezone.Length > MaxTimezoneLength)
             {
-                errors.Add(new DomainError(DomainErrors.UserSettings.InvalidTimezone));
+                errors.Add(new DomainError(DomainErrors.UserSettings.TimezoneTooLong));
 
                 return errors;
             }
 
-            try
-            {
-                TimeZoneInfo.FindSystemTimeZoneById(timezone);
-            }
-            catch
-            {
-                errors.Add(new DomainError(DomainErrors.UserSettings.InvalidTimezone));
-            }
-
-
+            
             return errors;
         }
 
