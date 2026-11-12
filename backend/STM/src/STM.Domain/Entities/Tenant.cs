@@ -1,4 +1,5 @@
-﻿using STM.Domain.Entities.Users;
+﻿using STM.Domain.Entities.Clients;
+using STM.Domain.Entities.Users;
 using STM.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -134,7 +135,11 @@ namespace STM.Domain.Entities
 
         private readonly List<User> _users = [];
 
+        private readonly List<Client> _clients = [];
+
         public IReadOnlyCollection<User> Users => _users;
+
+        public IReadOnlyCollection<Client> Clients => _clients;
 
     }
 }

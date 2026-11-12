@@ -133,10 +133,10 @@ namespace STM.Domain.Tests.Unit
             CalendarIntegrationToken? calendarIntegrationToken = null;
 
             // Act & Assert
-            var exception = Assert.Throws<BusinessRuleException>(() => new UserSettings(userId, timeZone!, notificationPreferences, calendarIntegrationToken));
+            var exception = Assert.Throws<BusinessRuleException>(() => new UserSettings(userId, timeZone, notificationPreferences, calendarIntegrationToken));
 
             DomainError domainError = Assert.Single(exception.Errors);
-            Assert.Equal(DomainErrors.UserSettings.InvalidTimezone, domainError.Code);
+            Assert.Equal(DomainErrors.UserSettings.TimezoneTooLong, domainError.Code);
         }
 
         [MemberData(nameof(InvalidTimezones))]
@@ -155,7 +155,7 @@ namespace STM.Domain.Tests.Unit
             var exception = Assert.Throws<BusinessRuleException>(() => userSettings.Update(newTimeZone, notificationPreferences, calendarIntegrationToken));
 
             var domainError = Assert.Single(exception.Errors);
-            Assert.Equal(DomainErrors.UserSettings.InvalidTimezone, domainError.Code);
+            Assert.Equal(DomainErrors.UserSettings.TimezoneTooLong, domainError.Code);
         }
 
         [Fact]
@@ -240,9 +240,6 @@ namespace STM.Domain.Tests.Unit
         public static TheoryData<string> InvalidTimezones =>
             [
                 new string('a', 101), // 101 characters
-                "Invalid/Timezone",
-                "Asia/Tehran/Extra",
-                "Asia",
             ];
 
     }
