@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace STM.Domain.Exceptions
@@ -61,6 +62,17 @@ namespace STM.Domain.Exceptions
             public const string IsAlreadyDeleted = "Client.Delete.IsAlreadyDeleted";
             public const string DeletedByRequired = "Client.Delete.DeletedByRequired";
             public const string CannotUpdateDeletedClient = "Client.Update.CannotUpdateDeletedClient";
+        }
+
+        public static class ClientTimeline
+        {
+            public const string ClientIdRequired = "ClientTimeline.ClientId.Required";
+
+            public const string EventTypeIsInvalid = "ClientTimeline.EventType.IsInvalid";
+
+            public const string OccuredAtIsInvalid = "ClientTimeline.OccuredAt.IsInvalid";
+
+            public const string ConsultantIdIsInvalid = "ClientTimeline.ConsultantId.IsInvalid";
         }
     }
 }
