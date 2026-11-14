@@ -247,9 +247,14 @@ namespace STM.Domain.Entities.Clients
 
         /* Navigation properties */
 
+        private readonly List<ClientTimeline> _clientTimelines = [];
+
         public Tenant Tenant { get; private set; } = default!;
 
         public User? DeletedByUser { get; private set; }
+
+        public IReadOnlyCollection<ClientTimeline> ClientTimelines => _clientTimelines;
+
 
     }
 }
