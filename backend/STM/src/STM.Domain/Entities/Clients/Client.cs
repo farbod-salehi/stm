@@ -204,7 +204,7 @@ namespace STM.Domain.Entities.Clients
             Phone = phone?.Trim();
         }
 
-        public void SetDeleted(Guid deletedBy)
+        public void Delete(Guid deletedBy)
         {
             if (IsDeleted)
                 throw new BusinessRuleException([new DomainError(DomainErrors.Client.IsAlreadyDeleted)]);
