@@ -12,13 +12,13 @@ namespace STM.Domain.Entities.Clients
         private ClientTimeline(){ /* EF Core constructor */ }
 
         public ClientTimeline(Guid clientId, Guid? consultantId, TimelineEventType eventType, 
-            DateTimeOffset occuredAt, string? metadataJson)
+            DateTimeOffset occurredAt, string? metadataJson)
         {
             List<DomainError> errors = [];
 
             errors.AddRange(ValidateClientId(clientId));
             errors.AddRange(ValidateEventType(eventType));
-            errors.AddRange(ValidateOccuredAt(occuredAt));
+            errors.AddRange(ValidateOccurredAt(occurredAt));
             errors.AddRange(ValidateConsultantId(consultantId));
 
             if (errors.Count > 0)
@@ -28,7 +28,7 @@ namespace STM.Domain.Entities.Clients
             ClientId = clientId;
             ConsultantId = consultantId;
             EventType = eventType;
-            OccuredAt = occuredAt;
+            OccurredAt = occurredAt;
             MetadataJson = metadataJson;
             CreatedAt = DateTimeOffset.UtcNow;
         }
@@ -53,12 +53,12 @@ namespace STM.Domain.Entities.Clients
             return errors;
         }
 
-        private static List<DomainError> ValidateOccuredAt(DateTimeOffset occuredAt)
+        private static List<DomainError> ValidateOccurredAt(DateTimeOffset occurredAt)
         {
             List<DomainError> errors = [];
 
-            if (occuredAt == default)
-                errors.Add(new DomainError(DomainErrors.ClientTimeline.OccuredAtIsInvalid));
+            if (occurredAt == default)
+                errors.Add(new DomainError(DomainErrors.ClientTimeline.OccurredAtIsInvalid));
 
             return errors;
         }
@@ -81,7 +81,7 @@ namespace STM.Domain.Entities.Clients
 
         public TimelineEventType EventType { get; private set; }
 
-        public DateTimeOffset OccuredAt { get; private set; }
+        public DateTimeOffset OccurredAt { get; private set; }
 
         public string? MetadataJson { get; private set; }
 
