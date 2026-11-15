@@ -70,7 +70,7 @@ namespace STM.Domain.Exceptions
 
             public const string EventTypeIsInvalid = "ClientTimeline.EventType.IsInvalid";
 
-            public const string OccuredAtIsInvalid = "ClientTimeline.OccuredAt.IsInvalid";
+            public const string OccurredAtIsInvalid = "ClientTimeline.OccurredAt.IsInvalid";
 
             public const string ConsultantIdIsInvalid = "ClientTimeline.ConsultantId.IsInvalid";
         }
