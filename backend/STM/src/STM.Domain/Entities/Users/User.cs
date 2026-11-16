@@ -1,4 +1,5 @@
-﻿using STM.Domain.Exceptions;
+﻿using STM.Domain.Entities.Clients;
+using STM.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Net.Mail;
@@ -216,12 +217,16 @@ namespace STM.Domain.Entities.Users
 
         public byte[] RowVersion { get; private set; } = default!;
 
-        
+
         /* Navigation properties */
+
+        private readonly List<ClientNote> _clientNotes = [];
 
         public Tenant Tenant { get; private set; } = default!;
 
         public UserSettings UserSettings { get; private set; } = default!;
+
+        public IReadOnlyCollection<ClientNote> ClientNotes => _clientNotes;
 
     }
 }

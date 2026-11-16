@@ -249,11 +249,15 @@ namespace STM.Domain.Entities.Clients
 
         private readonly List<ClientTimeline> _clientTimelines = [];
 
+        private readonly List<ClientNote> _clientNotes = [];
+
         public Tenant Tenant { get; private set; } = default!;
 
         public User? DeletedByUser { get; private set; }
 
         public IReadOnlyCollection<ClientTimeline> ClientTimelines => _clientTimelines;
+
+        public IReadOnlyCollection<ClientNote> ClientNotes => _clientNotes;
 
 
     }

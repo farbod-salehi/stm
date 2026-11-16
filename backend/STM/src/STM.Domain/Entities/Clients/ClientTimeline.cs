@@ -7,7 +7,7 @@ using static STM.Domain.Exceptions.DomainErrors;
 
 namespace STM.Domain.Entities.Clients
 {
-    public class ClientTimeline
+    public sealed class ClientTimeline
     {
         private ClientTimeline(){ /* EF Core constructor */ }
 
