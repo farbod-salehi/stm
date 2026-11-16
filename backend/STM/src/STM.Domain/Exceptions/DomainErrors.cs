@@ -84,5 +84,18 @@ namespace STM.Domain.Exceptions
             public const string ContentIsRequired = "ClientNote.Content.IsRequired";
 
          }
+
+        public static class ClientDocument
+        {
+            public const string ClientIdIsRequired = "ClientDocument.ClientId.Required";
+
+            public const string UploadedByUserIdIsRequired = "ClientDocument.UploadedByUserId.IsRequired";
+
+            public const string FileUrlIsRequired = "ClientDocument.FileUrl.IsRequired";
+
+            public const string FileUrlIsTooLong = "ClientDocument.FileUrl.IsTooLong";
+
+            public const string TypeIsInvalid = "ClientDocument.Type.IsInvalid";
+        }
     }
 }

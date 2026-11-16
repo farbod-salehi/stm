@@ -27,6 +27,7 @@ namespace STM.Domain.Entities.Clients
             ConsultantId = consultantId;
             Content = content;
             CreatedAt = DateTimeOffset.UtcNow;
+            UpdatedAt = null;
         }
 
         public void UpdateContent(string content)
