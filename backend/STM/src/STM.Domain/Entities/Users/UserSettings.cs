@@ -122,7 +122,7 @@ namespace STM.Domain.Entities.Users
 
         public DateTimeOffset? UpdatedAt { get; private set; }
 
-        public byte[] RowVersion { get; private set; } = [];
+        public byte[] RowVersion { get; private set; } = default!;
 
         /* Navigation properties */
 

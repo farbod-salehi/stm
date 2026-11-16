@@ -74,5 +74,15 @@ namespace STM.Domain.Exceptions
 
             public const string ConsultantIdIsInvalid = "ClientTimeline.ConsultantId.IsInvalid";
         }
+
+        public static class ClientNote
+        {
+            public const string ClientIdIsRequired = "ClientNote.ClientId.Required";
+
+            public const string ConsultantIdIsRequired = "ClientNote.ConsultantId.IsRequired";
+
+            public const string ContentIsRequired = "ClientNote.Content.IsRequired";
+
+         }
     }
 }
