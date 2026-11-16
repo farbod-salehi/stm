@@ -251,6 +251,8 @@ namespace STM.Domain.Entities.Clients
 
         private readonly List<ClientNote> _clientNotes = [];
 
+        private readonly List<ClientDocument> _clientDocuments = [];
+
         public Tenant Tenant { get; private set; } = default!;
 
         public User? DeletedByUser { get; private set; }
@@ -258,6 +260,8 @@ namespace STM.Domain.Entities.Clients
         public IReadOnlyCollection<ClientTimeline> ClientTimelines => _clientTimelines;
 
         public IReadOnlyCollection<ClientNote> ClientNotes => _clientNotes;
+
+        public IReadOnlyCollection<ClientDocument> ClientDocuments => _clientDocuments;
 
 
     }
