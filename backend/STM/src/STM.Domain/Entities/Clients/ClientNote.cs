@@ -1,9 +1,4 @@
 ﻿using STM.Domain.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using static STM.Domain.Exceptions.DomainErrors;
 
 namespace STM.Domain.Entities.Clients
 {
