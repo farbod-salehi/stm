@@ -9,8 +9,8 @@ namespace STM.Domain.Exceptions
     {
         public static class Tenant
         {
-            public const string NameRequired = "Tenant.Name.Required";
-            public const string DomainRequired = "Tenant.Domain.Required";
+            public const string NameRequired = "Tenant.Name.IsRequired";
+            public const string DomainRequired = "Tenant.Domain.IsRequired";
             public const string DomainLength = "Tenant.Domain.Length";
             public const string DomainContent = "Tenant.Domain.Content";       
             public const string DomainReservedWords = "Tenant.Domain.ReservedWords";
@@ -19,22 +19,22 @@ namespace STM.Domain.Exceptions
 
         public static class User
         {
-            public const string EmailRequired = "User.Email.Required";
+            public const string EmailRequired = "User.Email.IsRequired";
             public const string EmailInvalidFormat = "User.Email.InvalidFormat";
-            public const string PasswordHashRequired = "User.PasswordHash.Required";
-            public const string FullNameRequired = "User.FullName.Required";
+            public const string PasswordHashRequired = "User.PasswordHash.IsRequired";
+            public const string FullNameRequired = "User.FullName.IsRequired";
             public const string RoleIsInvalid = "User.Role.IsInvalid";
             public const string RoleCannotBeAdmin = "User.Role.CannotBeAdmin";
-            public const string TenantIdRequired = "User.TenantId.Required";
+            public const string TenantIdRequired = "User.TenantId.IsRequired";
         }
 
         public static class UserSettings
         {
-            public const string TimezoneRequired = "UserSettings.Timezone.Required";
+            public const string TimezoneRequired = "UserSettings.Timezone.IsRequired";
 
-            public const string UserIdRequired = "UserSettings.UserId.Required";
+            public const string UserIdRequired = "UserSettings.UserId.IsRequired";
 
-            public const string NotificationPreferencesRequired = "UserSettings.NotificationPreferences.Required";
+            public const string NotificationPreferencesRequired = "UserSettings.NotificationPreferences.IsRequired";
 
             public const string TimezoneTooLong = "UserSettings.Timezone.TooLong";
 
@@ -50,13 +50,13 @@ namespace STM.Domain.Exceptions
 
         public static class Client
         {
-            public const string TenantIdRequired = "Client.TenantId.Required";
-            public const string FullNameRequired = "Client.FullName.Required";
+            public const string TenantIdRequired = "Client.TenantId.IsRequired";
+            public const string FullNameRequired = "Client.FullName.IsRequired";
             public const string FullNameTooLong = "Client.FullName.TooLong";
             public const string EmailInvalidFormat = "Client.Email.InvalidFormat";
             public const string PhoneTooLong = "Client.Phone.TooLong";
             public const string StatusIsInvalid = "Client.Status.IsInvalid";
-            public const string TimezoneRequired = "Client.Timezone.Required";
+            public const string TimezoneRequired = "Client.Timezone.IsRequired";
             public const string TimezoneTooLong = "Client.Timezone.TooLong";
             public const string SourceIsInvalid = "Client.Source.IsInvalid";
             public const string IsAlreadyDeleted = "Client.Delete.IsAlreadyDeleted";
@@ -66,7 +66,7 @@ namespace STM.Domain.Exceptions
 
         public static class ClientTimeline
         {
-            public const string ClientIdRequired = "ClientTimeline.ClientId.Required";
+            public const string ClientIdRequired = "ClientTimeline.ClientId.IsRequired";
 
             public const string EventTypeIsInvalid = "ClientTimeline.EventType.IsInvalid";
 
@@ -77,7 +77,7 @@ namespace STM.Domain.Exceptions
 
         public static class ClientNote
         {
-            public const string ClientIdIsRequired = "ClientNote.ClientId.Required";
+            public const string ClientIdIsRequired = "ClientNote.ClientId.IsRequired";
 
             public const string ConsultantIdIsRequired = "ClientNote.ConsultantId.IsRequired";
 
@@ -87,7 +87,7 @@ namespace STM.Domain.Exceptions
 
         public static class ClientDocument
         {
-            public const string ClientIdIsRequired = "ClientDocument.ClientId.Required";
+            public const string ClientIdIsRequired = "ClientDocument.ClientId.IsRequired";
 
             public const string UploadedByUserIdIsRequired = "ClientDocument.UploadedByUserId.IsRequired";
 
@@ -96,6 +96,23 @@ namespace STM.Domain.Exceptions
             public const string FileUrlIsTooLong = "ClientDocument.FileUrl.IsTooLong";
 
             public const string TypeIsInvalid = "ClientDocument.Type.IsInvalid";
+        }
+
+        public static class UserLoginAttempt
+        {
+            public const string UserIdIsInvalid = "UserLoginAttempt.UserId.IsInvalid";
+
+            public const string EmailIsRequired = "UserLoginAttempt.Email.IsRequired";
+
+            public const string EmailIsTooLong = "UserLoginAttempt.Email.IsTooLong";
+
+            public const string EmailInvalidFormat = "UserLoginAttempt.Email.InvalidFormat";
+
+            public const string IpAddressIsTooLong = "UserLoginAttempt.IpAddress.IsTooLong";
+
+            public const string UserAgentIsTooLong = "UserLoginAttempt.UserAgent.IsTooLong";
+
+            public const string DeviceIdIsTooLong = "UserLoginAttempt.DeviceId.IsTooLong";
         }
     }
 }
