@@ -222,11 +222,15 @@ namespace STM.Domain.Entities.Users
 
         private readonly List<ClientNote> _clientNotes = [];
 
+        private readonly List<UserLoginAttempt> _userLoginAttempts = [];
+
         public Tenant Tenant { get; private set; } = default!;
 
         public UserSettings UserSettings { get; private set; } = default!;
 
         public IReadOnlyCollection<ClientNote> ClientNotes => _clientNotes;
+
+        public IReadOnlyCollection<UserLoginAttempt> UserLoginAttempts => _userLoginAttempts;
 
     }
 }
