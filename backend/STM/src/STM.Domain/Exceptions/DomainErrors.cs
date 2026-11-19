@@ -114,5 +114,24 @@ namespace STM.Domain.Exceptions
 
             public const string DeviceIdIsTooLong = "UserLoginAttempt.DeviceId.IsTooLong";
         }
+
+        public static class LeadForm
+        {
+            public const string TenantIdIsRequired = "LeadForm.TenantId.IsRequired";
+
+            public const string TitleIsRequired = "LeadForm.Title.IsRequired";
+
+            public const string TitleIsTooLong = "LeadForm.Title.IsTooLong";
+
+            public const string DescriptionIsTooLong = "LeadForm.Description.IsTooLong";
+
+            public const string FieldsJsonIsRequired = "LeadForm.FieldsJson.IsRequired";
+
+            public const string CannotUpdateDeletedLeadForm = "LeadForm.Update.CannotUpdateDeletedLeadForm";
+
+            public const string IsAlreadyDeleted = "LeadForm.Delete.IsAlreadyDeleted";
+
+            public const string DeletedByIsRequired = "LeadForm.Delete.DeletedByRequired";
+        }
     }
 }

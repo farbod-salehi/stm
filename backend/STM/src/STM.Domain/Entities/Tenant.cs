@@ -137,9 +137,13 @@ namespace STM.Domain.Entities
 
         private readonly List<Client> _clients = [];
 
+        private readonly List<Tenant> _tenants = [];
+
         public IReadOnlyCollection<User> Users => _users;
 
         public IReadOnlyCollection<Client> Clients => _clients;
+
+        public IReadOnlyCollection<Tenant> Tenants => _tenants;
 
     }
 }
