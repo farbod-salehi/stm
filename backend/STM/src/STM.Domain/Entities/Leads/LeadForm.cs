@@ -166,8 +166,12 @@ namespace STM.Domain.Entities.Leads
 
         /* Navigation properties */
 
+        private readonly List<LeadFormSubmission> _leadFormSubmissions = [];
+
         public Tenant Tenant { get; private set; } = default!;
 
         public Users.User? DeleteByUser { get; private set; }
+
+        public IReadOnlyCollection<LeadFormSubmission> LeadFormSubmissions => _leadFormSubmissions;
     }
 }
