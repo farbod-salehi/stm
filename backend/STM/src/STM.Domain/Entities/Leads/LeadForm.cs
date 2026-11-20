@@ -138,6 +138,8 @@ namespace STM.Domain.Entities.Leads
             IsActive = isActive;
         }
 
+
+
         public Guid Id { get; private set; }
 
         public Guid TenantId { get; private set; }
