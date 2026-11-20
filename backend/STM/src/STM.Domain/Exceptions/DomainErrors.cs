@@ -133,5 +133,22 @@ namespace STM.Domain.Exceptions
 
             public const string DeletedByIsRequired = "LeadForm.Delete.DeletedByRequired";
         }
+
+        public static class LeadFormSubmission
+        {
+            public const string LeadFormIdIsRequired = "LeadFormSubmission.LeadFormId.IsRequired";
+
+            public const string FullNameIsRequired = "LeadFormSubmission.FullName.IsRequired";
+
+            public const string FullNameIsTooLong = "LeadFormSubmission.FullName.IsTooLong";
+
+            public const string EmailIsTooLong = "LeadFormSubmission.Email.IsTooLong";
+            
+            public const string EmailInvalidFormat = "LeadFormSubmission.Email.InvalidFromat";
+
+            public const string PhoneIsTooLong = "LeadFormSubmission.Phone.IsTooLong";
+
+            public const string AnswersJsonIsRequired = "LeadFormSubmission.AnswersJson.IsRequired";
+        }
     }
 }
