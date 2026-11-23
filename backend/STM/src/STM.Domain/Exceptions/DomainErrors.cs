@@ -150,5 +150,34 @@ namespace STM.Domain.Exceptions
 
             public const string AnswersJsonIsRequired = "LeadFormSubmission.AnswersJson.IsRequired";
         }
+
+        public static class DiscoveryCall
+        {
+            public const string ClientIdIsRequired = "DiscoveryCall.ClientId.IsRequired";
+
+            public const string ScheduledAtIsInvalid = "DiscoveryCall.ScheduledAt.IsInvalid";
+
+            public const string DurationMinutesIsInvalid = "DiscoveryCall.DurationMinutes.IsInvalid";
+
+            public const string StatusIsInvalid = "DiscoveryCall.Status.IsInvalid";
+
+            public const string OutcomeIsInvalid = "DiscoveryCall.Outcome.IsInvalid";
+
+            public const string NotesIsTooLong = "DiscoveryCall.Notes.IsTooLong";
+
+            public const string ExternalEventIdIsTooLong = "DiscoveryCall.ExternalEventId.IsTooLong";
+
+            public const string CannotUpdateDeletedDiscoveryCall = "DiscoveryCall.Update.CannotUpdateDeletedDiscoveryCall";
+
+            public const string IsAlreadyDeleted = "DiscoveryCall.Delete.IsAlreadyDeleted";
+
+            public const string DeletedByIsRequired = "DiscoveryCall.Delete.DeletedByIsRequired";
+
+            public const string CannotRescheduleUnlessScheduled = "DiscoveryCall.ScheduledAt.CannotEditUnlessScheduled";
+
+            public const string CannotEditDurationUnlessScheduled = "DiscoveryCall.DurationMinutes.CannotEditUnlessScheduled";
+
+            public const string CannotEditStatusUnlessScheduled = "DiscoveryCall.Status.CannotEditUnlessScheduled";
+        }
     }
 }
