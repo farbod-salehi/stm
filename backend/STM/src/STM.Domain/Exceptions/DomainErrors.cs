@@ -179,5 +179,26 @@ namespace STM.Domain.Exceptions
 
             public const string CannotEditStatusUnlessScheduled = "DiscoveryCall.Status.CannotEditUnlessScheduled";
         }
+
+        public static class Package
+        {
+            public const string TenantIdIsRequired = "Package.TenantId.IsRequired";
+
+            public const string NameIsRequired = "Package.Name.IsRequired";
+
+            public const string NameIsTooLong = "Package.Name.IsToolong";
+
+            public const string DescriptionIsTooLong = "Package.Description.IsToolong";
+
+            public const string PriceIsInvalid = "Package.Price.IsInvalid";
+
+            public const string SessionsIncludedIsInvalid = "Package.SessionsIncluded.IsInvalid";
+
+            public const string CannotUpdateDeletedPackage = "Package.Update.CannotUpdateDeletedPackage";
+
+            public const string IsAlreadyDeleted = "Package.Delete.IsAlreadyDeleted";
+
+            public const string DeletedByIsRequired = "Package.Delete.DeletedByIsRequired";
+        }
     }
 }

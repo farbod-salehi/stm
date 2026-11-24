@@ -1,4 +1,5 @@
-﻿using STM.Domain.Entities.Clients;
+﻿using STM.Domain.Entities.ClientEngagement;
+using STM.Domain.Entities.Clients;
 using STM.Domain.Entities.Users;
 using STM.Domain.Exceptions;
 using System;
@@ -137,13 +138,13 @@ namespace STM.Domain.Entities
 
         private readonly List<Client> _clients = [];
 
-        private readonly List<Tenant> _tenants = [];
+        private readonly List<Package> _packages = [];
 
         public IReadOnlyCollection<User> Users => _users;
 
         public IReadOnlyCollection<Client> Clients => _clients;
 
-        public IReadOnlyCollection<Tenant> Tenants => _tenants;
+        public IReadOnlyCollection<Package> Packages => _packages;
 
     }
 }
