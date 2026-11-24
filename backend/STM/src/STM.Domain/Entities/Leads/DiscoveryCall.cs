@@ -35,7 +35,7 @@ namespace STM.Domain.Entities.Leads
             UpdatedAt = null;
             IsDeleted = false;
             DeletedAt = null;
-            DeletedBy = Guid.Empty;
+            DeletedBy = null;
         }
 
         public void UpdateDurationMinutes(int durationMinutes)
@@ -241,7 +241,7 @@ namespace STM.Domain.Entities.Leads
 
         public DateTimeOffset? DeletedAt { get; private set; }
 
-        public Guid DeletedBy { get; private set; }
+        public Guid? DeletedBy { get; private set; }
 
         public byte[] RowVersion { get; private set; } = default!;
 
