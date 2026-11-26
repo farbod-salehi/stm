@@ -1,4 +1,5 @@
-﻿using STM.Domain.Entities.Leads;
+﻿using STM.Domain.Entities.ClientEngagement;
+using STM.Domain.Entities.Leads;
 using STM.Domain.Entities.Users;
 using STM.Domain.Exceptions;
 using System;
@@ -256,6 +257,9 @@ namespace STM.Domain.Entities.Clients
 
         private readonly List<DiscoveryCall> _discoveryCalls = [];
 
+        private readonly List<Proposal> _proposals = [];
+
+
         public Tenant Tenant { get; private set; } = default!;
 
         public User? DeletedByUser { get; private set; }
@@ -267,6 +271,8 @@ namespace STM.Domain.Entities.Clients
         public IReadOnlyCollection<ClientDocument> ClientDocuments => _clientDocuments;
 
         public IReadOnlyCollection<DiscoveryCall> DiscoveryCalls => _discoveryCalls;
+
+        public IReadOnlyCollection<Proposal> Proposals => _proposals;
 
 
     }
