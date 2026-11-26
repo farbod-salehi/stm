@@ -664,17 +664,9 @@ namespace STM.Domain.Tests.Unit
         #endregion
     
 
-        private static DiscoveryCall CreateDiscoveryCall(
-            Guid? clientId = null, DateTimeOffset? scheduledAt = null,
-            int durationMinutes = 30, string? notes = "call notes", 
-            string? externalEventId = "valid-external-event-id")
+        private static DiscoveryCall CreateDiscoveryCall(Guid? clientId = null, DateTimeOffset? scheduledAt = null, int durationMinutes = 30, string? notes = "call notes", string? externalEventId = "valid-external-event-id")
         {
-            return new DiscoveryCall(
-                clientId ?? Guid.NewGuid(),
-                scheduledAt ?? DateTimeOffset.UtcNow.AddDays(3),
-                durationMinutes,
-                notes,
-                externalEventId);
+            return new DiscoveryCall(clientId ?? Guid.NewGuid(), scheduledAt ?? DateTimeOffset.UtcNow.AddDays(3), durationMinutes, notes, externalEventId);
         }
 
         public static TheoryData<DateTimeOffset> InvalidScheduledAt => 
