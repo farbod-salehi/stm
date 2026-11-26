@@ -200,5 +200,47 @@ namespace STM.Domain.Exceptions
 
             public const string DeletedByIsRequired = "Package.Delete.DeletedByIsRequired";
         }
+
+        public static class Proposal
+        {
+            public const string ClientIdIsRequired = "Proposal.ClientId.IsRequired";
+
+            public const string PackageIdIsRequired = "Proposal.PackageId.IsRequired";
+
+            public const string PackageNameIsRequired = "Proposal.PackageName.IsRequired";
+
+            public const string PackageNameIsTooLong = "Proposal.PackageName.IsTooLong";
+
+            public const string PackageDescriptionIsTooLong = "Proposal.PackageDescription.IsTooLong";
+
+            public const string PackagePriceIsInvalid = "Proposal.PackagePrice.IsInvalid";
+
+            public const string PackageSessionsIncludedIsInvalid = "Proposal.PackageSessionsIncluded.IsInvalid";
+
+            public const string NotesIsTooLong = "Proposal.Notes.IsTooLong";
+
+            public const string CannotUpdateDeletedProposal = "Proposal.Update.IsDeleted";
+
+            public const string OnlyDraftProposalsCanBeUpdated = "Proposal.Update.IsNotInDraftStatus";
+
+            public const string CannotSendDeletedProposal = "Proposal.Send.IsDeleted";
+
+            public const string CannotAcceptDeletedProposal = "Proposal.Accept.IsDeleted";
+
+            public const string CannotRejectDeletedProposal = "Proposal.Reject.IsDeleted";
+
+            public const string OnlyDraftProposalsCanBeSent = "Proposal.Send.IsNotInDraftStatus";
+
+            public const string OnlySentProposalsCanBeAccepted = "Proposal.Accept.IsNotInSentStatus";
+
+            public const string OnlySentProposalsCanBeRejected = "Proposal.Reject.IsNotInSentStatus";
+
+            public const string OnlyDraftedProposalsCanBeDeleted = "Proposal.Delete.IsNotInDraftStatus";
+
+            public const string IsAlreadyDeleted = "Proposal.Delete.IsAlreadyDeleted";
+
+            public const string DeletedByIsRequired = "Proposal.Delete.DeletedByIsRequired";
+
+        }
     }
 }

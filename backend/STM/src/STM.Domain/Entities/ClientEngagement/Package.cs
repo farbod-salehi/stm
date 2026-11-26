@@ -168,8 +168,12 @@ namespace STM.Domain.Entities.ClientEngagement
 
         /* Navigtion properties */
 
+        private readonly List<Proposal> _proposals = [];
+
         public Tenant Tenant { get; private set; } = default!;
 
         public Users.User? DeletedByUser { get; private set; }
+
+        public IReadOnlyCollection<Proposal> Proposals => _proposals;
     }
 }
